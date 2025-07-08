@@ -1,8 +1,46 @@
 body {
     background-color: #FFFBE3;
+    color: #26271A;
     font-family: "Poppins", sans-serif;
+    margin: 100px 0;
+    line-height: 1.5;
 }
 
-h1 {
-    font-family: "Jua", sans-serif;
+.navbar {
+    font-family: "Poppins", sans-serif;
+    padding: 18px;
+}
+
+.navbar-toggler {
+    background-color: #FFFBE3;
+}
+
+.hero-container {
+    background-color: #FFF0B3;
+    padding: 50px;
+
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.btn-branding {
+    border: solid #26271A 1px;
+    border-radius: 15px;
+    padding: 15px 30px;
+}
+
+.btn-branding.primary {
+    background-color: #FFA9A9;
+}
+
+.btn-branding.secondary {
+    background-color: #55E0A3;
+}
+
+.bg-body-branding {
+    background-color: #FFA9A9;
 }
