@@ -1,19 +1,19 @@
 
 const projects = [
     {
-        image: "/images/temp-image.png", // Your first app screenshot
-        launchUrl: "https://your-todo-app-link.com", // Link to your To-do app
-        aboutUrl: "#projects-todo" // Link to the section about this app on your projects page
+        image: "/images/temp-image.png",
+        launchUrl: "https://hello-weather-cute-app.netlify.app/",
+        aboutUrl: "/projects.html"
     },
     {
-        image: "/images/clock-screenshot.png", // Make sure you have this image
-        launchUrl: "https://your-dictionary-app-link.com",
-        aboutUrl: "#projects-dictionary"
+        image: "/images/clock-screenshot.png",
+        launchUrl: "https://world-clocks-for-kids.netlify.app/",
+        aboutUrl: "/projects.html"
     },
     {
-        image: "/images/atom-screenshot.png", // Make sure you have this image
-        launchUrl: "https://your-dictionary-app-link.com",
-        aboutUrl: "#projects-dictionary"
+        image: "/images/atom-screenshot.png",
+        launchUrl: "https://atom-big-questions-simple-answers.netlify.app/",
+        aboutUrl: "/projects.html"
     }
 ];
 
