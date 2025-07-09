@@ -1,6 +1,6 @@
 body {
     background-color: #FFFBE3;
-    color: #26271A;
+    color: #062925;
     font-family: "Poppins", sans-serif;
     margin: 100px 0;
     line-height: 1.5;
@@ -13,6 +13,14 @@ body {
 
 .navbar-toggler {
     background-color: #FFFBE3;
+}
+
+h1, h2 {
+    font-family: "Jua", sans-serif;
+}
+
+h2 {
+    color: #9E1C56;
 }
 
 .hero-container {
@@ -28,19 +36,63 @@ body {
 }
 
 .btn-branding {
-    border: solid #26271A 1px;
+    color: #FFFFFF;
     border-radius: 15px;
     padding: 15px 30px;
 }
 
 .btn-branding.primary {
-    background-color: #FFA9A9;
+    background-color: #C54C82;
 }
 
 .btn-branding.secondary {
-    background-color: #55E0A3;
+    background-color: #347474;
 }
 
 .bg-body-branding {
-    background-color: #FFA9A9;
+    background-color: #F4AEBA;
+}
+
+.web-apps {
+    background-color: #FFF0B3;
+    border-radius: 8px;
+}
+
+.web-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.tablet-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: url('/images/tablet-frame.png') no-repeat center center;
+    background-size: contain;
+}
+
+.tablet-screen {
+    position: absolute;
+    top: 12.3%;
+    left: 4.7%;
+    width: 90%;
+    height: 71%;
+    object-fit: cover;
+}
+
+.tablet-screen {
+    border: 2px solid #9E1C56;
+}
+
+.app-scroll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-scroll img {
+    max-width: 60px;
+    height: auto;
 }
