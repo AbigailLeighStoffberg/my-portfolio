@@ -1,4 +1,3 @@
-
 const projects = [
     {
         image: "/images/temp-image.png",
@@ -17,53 +16,103 @@ const projects = [
     }
 ];
 
-let currentProjectIndex = 0; // Start with the first project
+const games = [
+    {
+        image: "/images/bunny.png",
+        launchUrl: "#", // Add your game launch URLs
+        aboutUrl: "/games.html" // Add your game about URLs
+    },
+    {
+        image: "/images/shark.png",
+        launchUrl: "#",
+        aboutUrl: "/games.html"
+    },
+    {
+        image: "/images/shmup.png",
+        launchUrl: "#",
+        aboutUrl: "/games.html"
+    }
+];
 
-// Get references to the HTML elements
-const appScreenshot = document.getElementById('appScreenshot');
+// Tablet (App) Section
+let currentProjectIndex = 0;
+const svgAppScreenshot = document.getElementById('svgAppScreenshot');
 const launchAppBtn = document.getElementById('launchAppBtn');
 const aboutAppBtn = document.getElementById('aboutAppBtn');
-const prevAppBtn = document.getElementById('prevAppBtn');
-const nextAppBtn = document.getElementById('nextAppBtn');
+const prevAppBtn = document.getElementById('tablet-prev-btn');
+const nextAppBtn = document.getElementById('tablet-next-btn');
 
-// Function to update the displayed project
+// Console (Game) Section
+let currentGameIndex = 0;
+const svgGameScreenshot = document.getElementById('svgGameScreenshot');
+const launchGameBtn = document.getElementById('launchGameBtn');
+const aboutGameBtn = document.getElementById('aboutGameBtn');
+const prevGameBtn = document.getElementById('console-prev-btn');
+const nextGameBtn = document.getElementById('console-next-btn');
+
 function updateProjectDisplay() {
-    // Ensure all elements exist before trying to access their properties
-    if (appScreenshot && launchAppBtn && aboutAppBtn) {
+    if (svgAppScreenshot && launchAppBtn && aboutAppBtn) {
         const project = projects[currentProjectIndex];
-        appScreenshot.src = project.image;
-        launchAppBtn.href = project.launchUrl;
-        aboutAppBtn.href = project.aboutUrl;
-    } else {
-        console.error("One or more required DOM elements not found for project display update.");
+        updateDisplay(svgAppScreenshot, launchAppBtn, aboutAppBtn, project);
+        console.log("Updated project display to:", project.image);
     }
 }
 
-// Event listener for the "Next" button
+function updateGameDisplay() {
+    if (svgGameScreenshot && launchGameBtn && aboutGameBtn) {
+        const game = games[currentGameIndex];
+        updateDisplay(svgGameScreenshot, launchGameBtn, aboutGameBtn, game);
+        console.log("Updated game display to:", game.image);
+    }
+}
+
+// Helper function to update any display (project or game)
+function updateDisplay(screenshotElement, launchButton, aboutButton, item) {
+    const timestamp = new Date().getTime();
+    const imageUrl = `${item.image}?${timestamp}`;
+    
+    // Modern browsers (SVG 2)
+    screenshotElement.setAttribute('href', imageUrl);
+    
+    // For older browsers (SVG 1.1)
+    screenshotElement.setAttributeNS('http://www.w3.org/1999/xlink', 'href', imageUrl);
+
+    launchButton.href = item.launchUrl;
+    aboutButton.href = item.aboutUrl;
+}
+
+// Tablet navigation event listeners
 if (nextAppBtn) {
     nextAppBtn.addEventListener('click', () => {
-        currentProjectIndex++;
-        if (currentProjectIndex >= projects.length) {
-            currentProjectIndex = 0; // Loop back to the first project
-        }
+        currentProjectIndex = (currentProjectIndex + 1) % projects.length;
         updateProjectDisplay();
     });
-} else {
-    console.warn("Next button not found. Project navigation will not work.");
 }
 
-
-// Event listener for the "Previous" button
 if (prevAppBtn) {
     prevAppBtn.addEventListener('click', () => {
-        currentProjectIndex--;
-        if (currentProjectIndex < 0) {
-            currentProjectIndex = projects.length - 1;
-        }
+        currentProjectIndex = (currentProjectIndex - 1 + projects.length) % projects.length;
         updateProjectDisplay();
     });
-} else {
-    console.warn("Previous button not found. Project navigation will not work.");
 }
 
-document.addEventListener('DOMContentLoaded', updateProjectDisplay);
+// Console navigation event listeners
+if (nextGameBtn) {
+    nextGameBtn.addEventListener('click', () => {
+        currentGameIndex = (currentGameIndex + 1) % games.length;
+        updateGameDisplay();
+    });
+}
+
+if (prevGameBtn) {
+    prevGameBtn.addEventListener('click', () => {
+        currentGameIndex = (currentGameIndex - 1 + games.length) % games.length;
+        updateGameDisplay();
+    });
+}
+
+// Initialize both displays when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    updateProjectDisplay();
+    updateGameDisplay();
+});
