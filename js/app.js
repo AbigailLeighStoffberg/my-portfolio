@@ -1,46 +1,21 @@
-const projects = [
-    {
-        image: "/images/temp-image.png",
-        launchUrl: "https://hello-weather-cute-app.netlify.app/",
-        aboutUrl: "/projects.html"
-    },
-    {
-        image: "/images/clock-screenshot.png",
-        launchUrl: "https://world-clocks-for-kids.netlify.app/",
-        aboutUrl: "/projects.html"
-    },
-    {
-        image: "/images/atom-screenshot.png",
-        launchUrl: "https://atom-big-questions-simple-answers.netlify.app/",
-        aboutUrl: "/projects.html"
-    }
-];
 
 const games = [
     {
-        image: "/images/bunny.png",
+        image: "/images/land.png",
         launchUrl: "#", // Add your game launch URLs
         aboutUrl: "/games.html" // Add your game about URLs
     },
     {
-        image: "/images/shark.png",
+        image: "/images/sea.png",
         launchUrl: "#",
         aboutUrl: "/games.html"
     },
     {
-        image: "/images/shmup.png",
+        image: "/images/space.png",
         launchUrl: "#",
         aboutUrl: "/games.html"
     }
 ];
-
-// Tablet (App) Section
-let currentProjectIndex = 0;
-const svgAppScreenshot = document.getElementById('svgAppScreenshot');
-const launchAppBtn = document.getElementById('launchAppBtn');
-const aboutAppBtn = document.getElementById('aboutAppBtn');
-const prevAppBtn = document.getElementById('tablet-prev-btn');
-const nextAppBtn = document.getElementById('tablet-next-btn');
 
 // Console (Game) Section
 let currentGameIndex = 0;
@@ -49,14 +24,6 @@ const launchGameBtn = document.getElementById('launchGameBtn');
 const aboutGameBtn = document.getElementById('aboutGameBtn');
 const prevGameBtn = document.getElementById('console-prev-btn');
 const nextGameBtn = document.getElementById('console-next-btn');
-
-function updateProjectDisplay() {
-    if (svgAppScreenshot && launchAppBtn && aboutAppBtn) {
-        const project = projects[currentProjectIndex];
-        updateDisplay(svgAppScreenshot, launchAppBtn, aboutAppBtn, project);
-        console.log("Updated project display to:", project.image);
-    }
-}
 
 function updateGameDisplay() {
     if (svgGameScreenshot && launchGameBtn && aboutGameBtn) {
@@ -81,21 +48,6 @@ function updateDisplay(screenshotElement, launchButton, aboutButton, item) {
     aboutButton.href = item.aboutUrl;
 }
 
-// Tablet navigation event listeners
-if (nextAppBtn) {
-    nextAppBtn.addEventListener('click', () => {
-        currentProjectIndex = (currentProjectIndex + 1) % projects.length;
-        updateProjectDisplay();
-    });
-}
-
-if (prevAppBtn) {
-    prevAppBtn.addEventListener('click', () => {
-        currentProjectIndex = (currentProjectIndex - 1 + projects.length) % projects.length;
-        updateProjectDisplay();
-    });
-}
-
 // Console navigation event listeners
 if (nextGameBtn) {
     nextGameBtn.addEventListener('click', () => {
@@ -113,6 +65,5 @@ if (prevGameBtn) {
 
 // Initialize both displays when the page loads
 document.addEventListener('DOMContentLoaded', () => {
-    updateProjectDisplay();
     updateGameDisplay();
 });

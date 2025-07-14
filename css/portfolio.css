@@ -1,9 +1,16 @@
 body {
-    background-color: #FFFBE3;
+    background-color: #FFFFFF;
     color: #062925;
     font-family: "Poppins", sans-serif;
     margin: 100px 0;
     line-height: 1.5;
+}
+
+.main-content-wrapper {
+    max-width: 1200px;
+    /* Or a width that suits your design, e.g., 960px, 1140px */
+    width: 100%;
+    /* Ensures it's responsive and doesn't break on smaller screens */
 }
 
 .navbar {
@@ -19,13 +26,18 @@ h1, h2 {
     font-family: "Jua", sans-serif;
 }
 
+h1 {
+    font-size: 45px;
+}
+
 h2 {
     color: #9E1C56;
     font-size: 40px;
+    text-align: center;
 }
 
 .hero-container {
-    background-color: #FFF0B3;
+    background-color: #FFEAEE;
     padding: 50px;
 
 }
@@ -54,39 +66,24 @@ h2 {
     background-color: #F4AEBA;
 }
 
-.web-apps {
-    background-color: #FFF0B3;
-    border-radius: 8px;
+.featured-heading {
+    color: #062925;
+    font-family: "Poppins",
+        sans-serif;
 }
 
-.web-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 30px;
-}
-
-.tablet-wrapper {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    background-size: contain;
-}
-
-.tablet-screen {
-    border: 2px solid #9E1C56;
+.apps-container {
+    padding: 20px;
 }
 
 .console-wrapper {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 10;
     background-size: contain;
 }
 
-.games {
-    background-color: #FFF0B3;
-    border-radius: 8px;
+.handheld-console {
+    max-height: 500px;
 }
 
 .game-buttons {
@@ -95,29 +92,6 @@ h2 {
     gap: 40px;
 }
 
-/* This is a general rule to remove default outlines and highlights */
-:focus {
-    outline: none !important;
-    /* !important helps override other styles */
-    box-shadow: none !important;
-    -webkit-tap-highlight-color: transparent !important;
-    /* For mobile taps */
-}
-
-/* Specifically target your screenshot images if they are the ones gaining focus */
-.tablet-screen:focus,
-.tablet-screen:active {
-    outline: none !important;
-    box-shadow: none !important;
-    /* If it's a background or filter causing it, try these: */
-    background-color: transparent !important;
-    filter: none !important;
-}
-
-.console-screen:focus,
-.console-screen:active {
-    outline: none !important;
-    box-shadow: none !important;
-    background-color: transparent !important;
-    filter: none !important;
+.project-link {
+    width: 100%;
 }
