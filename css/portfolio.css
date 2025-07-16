@@ -75,6 +75,24 @@ h2 {
     background-color: #347474;
 }
 
+.btn-branding.primary:hover {
+    background-color: var(--branding-color-dark-pink);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-branding.secondary:hover {
+    background-color: #1d5a5a;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-branding {
+    transition: all 150ms ease-in-out;
+}
+
 .bg-body-branding {
     background-color: #F4AEBA;
 }
@@ -126,7 +144,7 @@ h2 {
 
 .about-text-container {
     background-color: #FFEAEE;
-        padding: 50px;
+    padding: 50px;
 }
 
 .btn-outline-branding {
@@ -135,6 +153,13 @@ h2 {
     color: #9E1C56;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     font-weight: 500;
+}
+
+.btn-outline-branding:hover {
+    background-color: #FFFFFF;
+    border: 1px solid #062925;
+    color: #062925;
+    transform: translateY(-2px);
 }
 
 .alien {
@@ -149,6 +174,11 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 40px;
+}
+
+.thanks-container {
+    background-color: #FFEAEE;
+        padding: 50px;
 }
 
 footer {

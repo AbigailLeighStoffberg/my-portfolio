@@ -2,8 +2,8 @@
 const games = [
     {
         image: "/images/land.png",
-        launchUrl: "#", // Add your game launch URLs
-        aboutUrl: "/games.html" // Add your game about URLs
+        launchUrl: "#",
+        aboutUrl: "/games.html"
     },
     {
         image: "/images/sea.png",
