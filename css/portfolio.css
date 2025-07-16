@@ -133,3 +133,9 @@ h2 {
 .text-light-branding {
     color:#062925cb;
 }
+
+.game-projects-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
