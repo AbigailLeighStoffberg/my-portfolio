@@ -118,6 +118,18 @@ h2 {
         padding: 50px;
 }
 
+.btn-outline-branding {
+    background-color: #FFFFFF;
+    border: 1px solid #9E1C56;
+    color: #9E1C56;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    font-weight: 500;
+}
+
 .alien {
     max-width: 280px;
+}
+
+.text-light-branding {
+    color:#062925cb;
 }
