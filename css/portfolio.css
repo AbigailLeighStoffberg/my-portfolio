@@ -1,19 +1,30 @@
+:root {
+    --branding-color-dark-pink: #9E1C56;
+    --branding-color-dark-green: #062925;
+    --secondary-color: #C54C82;
+    --tertiary-color: #FFEAEE;
+    --heading-font-family: "Jua", serif;
+    --default-font-family: "Poppins", sans-serif;
+}
+
 body {
     background-color: #FFFFFF;
     color: #062925;
     font-family: "Poppins", sans-serif;
-    margin: 100px 0;
+    margin: 0;
     line-height: 1.5;
-
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
 }
 
 .main-content-wrapper {
     max-width: 1140px;
     width: 100%;
     margin: 0 auto;
+    padding: 120px 0 0;
+    flex: 1;
 }
 
 .navbar {
@@ -138,4 +149,35 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 40px;
+}
+
+footer {
+    width: 100%;
+    background-color: var(--tertiary-color);
+    margin-top: auto;
+}
+
+footer .email-link {
+    text-decoration: none;
+    color: var(--branding-color-dark-green);
+    font-size: 24px;
+}
+
+footer .email-link:hover {
+    color: var(--branding-color);
+}
+
+footer .social-links a {
+    margin: 0 20px;
+    color: white;
+    background: var(--secondary-color);
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: all 100ms ease-in-out;
+}
+
+footer .social-links a:hover {
+    color: white;
+    background: var(--branding-color-dark-pink);
 }
